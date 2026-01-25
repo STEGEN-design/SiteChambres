@@ -4,6 +4,7 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Contact - Sainte Geneviève</title>
+    <link rel="icon" href="images/Mirab.png" type="image/png"/>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -97,13 +98,27 @@
             <a href="contact.html" class="bg-primary text-white px-6 py-2 text-sm font-bold rounded uppercase tracking-widest hover:bg-primary/90 transition-all">
                 Réserver
             </a>
+            <button id="nav-toggle" aria-label="Ouvrir le menu" class="md:hidden ml-3 p-2 rounded hover:bg-primary/5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
         </div>
     </header>
+    <div id="mobile-menu" class="md:hidden hidden bg-background-light dark:bg-background-dark border-b border-primary/10">
+      <nav class="flex flex-col items-center gap-4 py-4">
+        <a class="hover:text-primary" href="la-maison.html">La Maison</a>
+        <a class="hover:text-primary" href="index.html#chambres">Nos chambres</a>
+        <a class="hover:text-primary" href="index.html#activites">Activités</a>
+        <a class="hover:text-primary" href="tarifs.html">Tarifs</a>
+        <a class="hover:text-primary" href="contact.html">Contact et Accès</a>
+      </nav>
+    </div>
 
     <main>
         <!-- Hero Section -->
         <section class="relative h-[50vh] w-full flex items-center justify-center overflow-hidden">
-            <div class="absolute inset-0 bg-cover bg-center" style='background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBqCadedAek-H08cENvvpragIfFe2ppTZQgRX8HT9MfSklSPcrV7XuMFxRLcC60ixrgLMGbWp_Eiju71XctcRrrHSA8y8Z1FEm8Eh7JHfrxgFndhWSP4wsa2GXMTT7tOeauHzjGf8npTMEm-GsTcLxRsfwahEffeSVs3VOJ7b5epUfgRrfE-99banBOcU7b37hHYopO6x9ikzdebOp1qpYKH6GoHCSaHcqZZNU27YSb5QntvzQWoV4dpueCXzcf834DBIl0SuPPHYlA");'>
+            <div class="absolute inset-0 bg-cover bg-center" style='background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url("images/b_salleamanger2.jpg'>
             </div>
             <div class="relative z-10 text-center text-white px-4 max-w-4xl">
                 <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-4">Nous contacter</h1>
@@ -240,5 +255,14 @@
             document.getElementById('success-message').scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
     </script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const btn = document.getElementById('nav-toggle');
+            const menu = document.getElementById('mobile-menu');
+            if (!btn || !menu) return;
+            btn.addEventListener('click', function () { menu.classList.toggle('hidden'); });
+            menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ menu.classList.add('hidden'); }); });
+        });
+        </script>
 </body>
 </html>

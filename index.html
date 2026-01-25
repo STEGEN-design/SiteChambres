@@ -75,11 +75,62 @@
 <a class="text-sm font-medium hover:text-primary transition-colors" href="tarifs.html">Tarifs</a>
 <a class="text-sm font-medium hover:text-primary transition-colors" href="contact.html">Contact et Accès</a>
 </nav>
-<a href="contact.html" class="bg-primary text-white px-6 py-2 text-sm font-bold rounded uppercase tracking-widest hover:bg-primary/90 transition-all">
+<div class="flex items-center gap-4">
+<a href="contact.html" class="hidden md:block bg-primary text-white px-6 py-2 text-sm font-bold rounded uppercase tracking-widest hover:bg-primary/90 transition-all">
             Réserver
         </a>
+<!-- Bouton hamburger mobile -->
+<button id="mobile-menu-button" class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5" aria-label="Menu de navigation">
+<span class="block w-6 h-0.5 bg-primary transition-all duration-300" id="hamburger-top"></span>
+<span class="block w-6 h-0.5 bg-primary transition-all duration-300" id="hamburger-middle"></span>
+<span class="block w-6 h-0.5 bg-primary transition-all duration-300" id="hamburger-bottom"></span>
+</button>
 </div>
+</div>
+<!-- Menu mobile -->
+<nav id="mobile-menu" class="hidden flex-col gap-4 px-6 py-6 bg-background-light/95 dark:bg-background-dark/95 border-t border-primary/10 md:hidden">
+<a class="text-sm font-medium hover:text-primary transition-colors py-2" href="la-maison.html">La Maison</a>
+<a class="text-sm font-medium hover:text-primary transition-colors py-2" href="index.html#chambres">Nos chambres</a>
+<a class="text-sm font-medium hover:text-primary transition-colors py-2" href="index.html#activites">Activités</a>
+<a class="text-sm font-medium hover:text-primary transition-colors py-2" href="tarifs.html">Tarifs</a>
+<a class="text-sm font-medium hover:text-primary transition-colors py-2" href="contact.html">Contact et Accès</a>
+<a href="contact.html" class="bg-primary text-white px-6 py-3 text-sm font-bold rounded uppercase tracking-widest hover:bg-primary/90 transition-all text-center mt-2">
+            Réserver
+        </a>
+</nav>
 </header>
+<script>
+document.getElementById('mobile-menu-button').addEventListener('click', function() {
+    const menu = document.getElementById('mobile-menu');
+    const isOpen = menu.classList.contains('flex');
+
+    if (isOpen) {
+        menu.classList.remove('flex');
+        menu.classList.add('hidden');
+        document.getElementById('hamburger-top').style.transform = '';
+        document.getElementById('hamburger-middle').style.opacity = '';
+        document.getElementById('hamburger-bottom').style.transform = '';
+    } else {
+        menu.classList.remove('hidden');
+        menu.classList.add('flex');
+        document.getElementById('hamburger-top').style.transform = 'rotate(45deg) translate(5px, 5px)';
+        document.getElementById('hamburger-middle').style.opacity = '0';
+        document.getElementById('hamburger-bottom').style.transform = 'rotate(-45deg) translate(5px, -5px)';
+    }
+});
+
+// Fermer le menu lors du clic sur un lien
+document.querySelectorAll('#mobile-menu a').forEach(link => {
+    link.addEventListener('click', function() {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.remove('flex');
+        menu.classList.add('hidden');
+        document.getElementById('hamburger-top').style.transform = '';
+        document.getElementById('hamburger-middle').style.opacity = '';
+        document.getElementById('hamburger-bottom').style.transform = '';
+    });
+});
+</script>
 <main class="layout-container">
 <section class="relative h-[85vh] w-full flex items-center justify-center overflow-hidden">
 <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105" style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url(&quot;images/slide_cadre_devant1.jpg&quot;);">
@@ -138,12 +189,33 @@
 <div class="w-24 h-px bg-primary mx-auto"></div>
 </div>
 <div class="grid md:grid-cols-3 gap-8">
-<a href="chambre-coucher-de-soleil.html" class="group bg-background-light dark:bg-background-dark border border-primary/10 overflow-hidden rounded-lg shadow-sm hover:shadow-xl transition-all block">
+<!-- Chambre Coucher de Soleil -->
+<div class="group bg-background-light dark:bg-background-dark border border-primary/10 overflow-hidden rounded-lg shadow-sm hover:shadow-xl transition-all">
 <div class="aspect-square overflow-hidden relative">
     <div class="absolute top-4 left-4 z-10 bg-primary text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1">Populaire</div>
-<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url(&quot;images/b_coucher_lit.jpg&quot;);"></div>
+    <!-- Carrousel -->
+    <div class="carousel relative w-full h-full" data-carousel="coucher">
+        <div class="carousel-slide absolute inset-0 opacity-100 transition-opacity duration-500 bg-cover bg-center" style="background-image: url('images/b_coucher_lit.jpg');"></div>
+        <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-500 bg-cover bg-center" style="background-image: url('images/b_coucher_lit2.jpg');"></div>
+        <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-500 bg-cover bg-center" style="background-image: url('images/b_coucher_salon.jpg');"></div>
+        <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-500 bg-cover bg-center" style="background-image: url('images/b_coucher_sdb2.jpg');"></div>
+        <!-- Navigation arrows -->
+        <button class="carousel-prev absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-primary w-8 h-8 rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100" aria-label="Image précédente">
+            <span class="material-symbols-outlined text-sm">chevron_left</span>
+        </button>
+        <button class="carousel-next absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-primary w-8 h-8 rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100" aria-label="Image suivante">
+            <span class="material-symbols-outlined text-sm">chevron_right</span>
+        </button>
+        <!-- Indicators -->
+        <div class="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex gap-1.5">
+            <button class="carousel-dot w-2 h-2 rounded-full bg-white/90 transition-all" data-index="0"></button>
+            <button class="carousel-dot w-2 h-2 rounded-full bg-white/50 transition-all" data-index="1"></button>
+            <button class="carousel-dot w-2 h-2 rounded-full bg-white/50 transition-all" data-index="2"></button>
+            <button class="carousel-dot w-2 h-2 rounded-full bg-white/50 transition-all" data-index="3"></button>
+        </div>
+    </div>
 </div>
-<div class="p-6">
+<a href="chambre-coucher-de-soleil.html" class="block p-6">
 <div class="flex justify-between items-start mb-4">
 <h3 class="text-xl font-bold">Coucher de Soleil</h3>
 <span class="text-primary font-bold italic">90€</span>
@@ -158,14 +230,33 @@
 <span class="material-symbols-outlined text-primary/60 text-lg" title="Petit Déjeuner">coffee</span>
 </div>
 <span class="w-full border border-primary text-primary py-2 font-bold text-xs tracking-widest uppercase hover:bg-primary hover:text-white transition-all block text-center">Découvrir</span>
-</div>
 </a>
-<div class="group bg-background-light dark:bg-background-dark border border-primary/10 overflow-hidden rounded-lg shadow-sm hover:shadow-xl transition-all">
-<a href="chambre-rouge-baroque.html" class="group bg-background-light dark:bg-background-dark border border-primary/10 overflow-hidden rounded-lg shadow-sm hover:shadow-xl transition-all block">
-<div class="aspect-square overflow-hidden">
-<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url(&quot;images/b_baroque.jpg&quot;);"></div>
 </div>
-<div class="p-6">
+
+<!-- Chambre Rouge Baroque -->
+<div class="group bg-background-light dark:bg-background-dark border border-primary/10 overflow-hidden rounded-lg shadow-sm hover:shadow-xl transition-all">
+<div class="aspect-square overflow-hidden relative">
+    <!-- Carrousel -->
+    <div class="carousel relative w-full h-full" data-carousel="baroque">
+        <div class="carousel-slide absolute inset-0 opacity-100 transition-opacity duration-500 bg-cover bg-center" style="background-image: url('images/b_baroque.jpg');"></div>
+        <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-500 bg-cover bg-center" style="background-image: url('images/b_baroque_lit2.jpg');"></div>
+        <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-500 bg-cover bg-center" style="background-image: url('images/b_baroque_sdb.jpg');"></div>
+        <!-- Navigation arrows -->
+        <button class="carousel-prev absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-primary w-8 h-8 rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100" aria-label="Image précédente">
+            <span class="material-symbols-outlined text-sm">chevron_left</span>
+        </button>
+        <button class="carousel-next absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-primary w-8 h-8 rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100" aria-label="Image suivante">
+            <span class="material-symbols-outlined text-sm">chevron_right</span>
+        </button>
+        <!-- Indicators -->
+        <div class="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex gap-1.5">
+            <button class="carousel-dot w-2 h-2 rounded-full bg-white/90 transition-all" data-index="0"></button>
+            <button class="carousel-dot w-2 h-2 rounded-full bg-white/50 transition-all" data-index="1"></button>
+            <button class="carousel-dot w-2 h-2 rounded-full bg-white/50 transition-all" data-index="2"></button>
+        </div>
+    </div>
+</div>
+<a href="chambre-rouge-baroque.html" class="block p-6">
 <div class="flex justify-between items-start mb-4">
 <h3 class="text-xl font-bold">Rouge Baroque</h3>
 <span class="text-primary font-bold italic">85€</span>
@@ -175,20 +266,41 @@
                         </p>
 <div class="flex gap-4 mb-8">
 <span class="material-symbols-outlined text-primary/60 text-lg" title="Grand Lit">bed</span>
-<span class="material-symbols-outlined text-primary/60 text-lg" title="Vue Vallée">landscape</span><span class="material-symbols-outlined text-primary/60 text-lg" title="Douche Moderne">shower</span>
+<span class="material-symbols-outlined text-primary/60 text-lg" title="Vue Vallée">landscape</span>
+<span class="material-symbols-outlined text-primary/60 text-lg" title="Douche Moderne">shower</span>
 <span class="material-symbols-outlined text-primary/60 text-lg" title="Petit Déjeuner">coffee</span>
-
 </div>
-<button class="w-full border border-primary text-primary py-2 font-bold text-xs tracking-widest uppercase hover:bg-primary hover:text-white transition-all">Découvrir
-</div>
+<span class="w-full border border-primary text-primary py-2 font-bold text-xs tracking-widest uppercase hover:bg-primary hover:text-white transition-all block text-center">Découvrir</span>
 </a>
 </div>
-<a href="chambre-suite-familiale.html" class="group bg-background-light dark:bg-background-dark border border-primary/10 overflow-hidden rounded-lg shadow-sm hover:shadow-xl transition-all block">
+
+<!-- Chambre Suite Familiale -->
+<div class="group bg-background-light dark:bg-background-dark border border-primary/10 overflow-hidden rounded-lg shadow-sm hover:shadow-xl transition-all">
 <div class="aspect-square overflow-hidden relative">
-<div class="absolute top-4 left-4 z-10 bg-primary text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1">Idéal Famille</div>
-<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url(&quot;images/b_suite_lit.jpg&quot;);"></div>
+    <div class="absolute top-4 left-4 z-10 bg-primary text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1">Idéal Famille</div>
+    <!-- Carrousel -->
+    <div class="carousel relative w-full h-full" data-carousel="suite">
+        <div class="carousel-slide absolute inset-0 opacity-100 transition-opacity duration-500 bg-cover bg-center" style="background-image: url('images/b_suite_lit.jpg');"></div>
+        <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-500 bg-cover bg-center" style="background-image: url('images/b_suite_enfat.jpg');"></div>
+        <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-500 bg-cover bg-center" style="background-image: url('images/b_suite_Sdb.jpg');"></div>
+        <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-500 bg-cover bg-center" style="background-image: url('images/b_suite_vue.jpg');"></div>
+        <!-- Navigation arrows -->
+        <button class="carousel-prev absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-primary w-8 h-8 rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100" aria-label="Image précédente">
+            <span class="material-symbols-outlined text-sm">chevron_left</span>
+        </button>
+        <button class="carousel-next absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-primary w-8 h-8 rounded-full flex items-center justify-center transition-all opacity-0 group-hover:opacity-100" aria-label="Image suivante">
+            <span class="material-symbols-outlined text-sm">chevron_right</span>
+        </button>
+        <!-- Indicators -->
+        <div class="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex gap-1.5">
+            <button class="carousel-dot w-2 h-2 rounded-full bg-white/90 transition-all" data-index="0"></button>
+            <button class="carousel-dot w-2 h-2 rounded-full bg-white/50 transition-all" data-index="1"></button>
+            <button class="carousel-dot w-2 h-2 rounded-full bg-white/50 transition-all" data-index="2"></button>
+            <button class="carousel-dot w-2 h-2 rounded-full bg-white/50 transition-all" data-index="3"></button>
+        </div>
+    </div>
 </div>
-<div class="p-6">
+<a href="chambre-suite-familiale.html" class="block p-6">
 <div class="flex justify-between items-start mb-4">
 <h3 class="text-xl font-bold">Suite Familiale</h3>
 <span class="text-primary font-bold italic">140€</span>
@@ -202,9 +314,79 @@
 <span class="material-symbols-outlined text-primary/60 text-lg" title="Petit Déjeuner">coffee</span>
 </div>
 <span class="w-full border border-primary text-primary py-2 font-bold text-xs tracking-widest uppercase hover:bg-primary hover:text-white transition-all block text-center">Découvrir</span>
-</div>
 </a>
 </div>
+</div>
+
+<!-- Script Carrousel -->
+<script>
+document.querySelectorAll('.carousel').forEach(carousel => {
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const dots = carousel.querySelectorAll('.carousel-dot');
+    const prevBtn = carousel.querySelector('.carousel-prev');
+    const nextBtn = carousel.querySelector('.carousel-next');
+    let currentIndex = 0;
+    let autoplayInterval;
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.style.opacity = i === index ? '1' : '0';
+        });
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('bg-white/90', i === index);
+            dot.classList.toggle('bg-white/50', i !== index);
+        });
+        currentIndex = index;
+    }
+
+    function nextSlide() {
+        showSlide((currentIndex + 1) % slides.length);
+    }
+
+    function prevSlide() {
+        showSlide((currentIndex - 1 + slides.length) % slides.length);
+    }
+
+    function startAutoplay() {
+        autoplayInterval = setInterval(nextSlide, 4000);
+    }
+
+    function stopAutoplay() {
+        clearInterval(autoplayInterval);
+    }
+
+    prevBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        prevSlide();
+        stopAutoplay();
+        startAutoplay();
+    });
+
+    nextBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        nextSlide();
+        stopAutoplay();
+        startAutoplay();
+    });
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            showSlide(index);
+            stopAutoplay();
+            startAutoplay();
+        });
+    });
+
+    carousel.addEventListener('mouseenter', stopAutoplay);
+    carousel.addEventListener('mouseleave', startAutoplay);
+
+    startAutoplay();
+});
+</script>
 </div>
 </section>
 <section id="activites" class="py-24 px-6 md:px-20 max-w-[1200px] mx-auto">

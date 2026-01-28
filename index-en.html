@@ -62,7 +62,7 @@
 </head>
 <body class="bg-background-light dark:bg-background-dark text-[#111318] dark:text-gray-100 transition-colors duration-300">
 <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
-    <header class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-sm border-b border-primary/10 px-6 md:px-20 py-4">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-sm border-b border-primary/10 px-6 md:px-20 py-4">
 <div class="max-w-[1200px] mx-auto flex items-center justify-between">
 <div class="flex items-center gap-3">
 <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-primary logo-mirabelle cursor-pointer">
@@ -94,7 +94,7 @@
 </button>
 </div>
 </header>
-<div id="mobile-menu" class="md:hidden hidden bg-background-light dark:bg-background-dark border-b border-primary/10">
+<div id="mobile-menu" class="md:hidden hidden sticky top-[76px] z-40 bg-background-light dark:bg-background-dark border-b border-primary/10">
   <nav class="flex flex-col items-center gap-4 py-4">
     <a class="hover:text-primary" href="la-maison-en.html">The House</a>
     <a class="hover:text-primary" href="index-en.html#chambres">Our Rooms</a>
@@ -103,7 +103,7 @@
     <a class="hover:text-primary" href="contact-en.html">Contact & Access</a>
   </nav>
 </div>
-<main class="layout-container">
+<main class="layout-container pt-[76px]">
 <section class="relative h-[85vh] w-full flex items-center justify-center overflow-hidden">
 <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105" style="background-image:  url(&quot;images/slide_cadre_devant1 - copie.png&quot;);">
 </div>

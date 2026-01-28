@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Red Baroque Room | Sainte Geneviève</title>
+    <link rel="icon" href="images/Mirab.png" type="image/png"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c2410c",
+                        "background-light": "#F9F7F2",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader", "serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Newsreader', serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .logo-mirabelle { transition: transform 0.5s ease-in-out; }
+        .logo-mirabelle:hover { animation: wiggle 0.6s ease-in-out; }
+        @keyframes wiggle { 0% { transform: rotate(0deg); } 25% { transform: rotate(15deg); } 50% { transform: rotate(-10deg); } 75% { transform: rotate(5deg); } 100% { transform: rotate(0deg); } }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111318] dark:text-gray-100 transition-colors duration-300">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+        <header class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-sm border-b border-primary/10 px-6 md:px-20 py-4">
+            <div class="max-w-[1200px] mx-auto flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-primary logo-mirabelle cursor-pointer">
+                        <circle cx="20" cy="30" r="12" fill="currentColor" /><circle cx="32" cy="22" r="9" fill="currentColor" fill-opacity="0.6" /><path d="M20 18C20 18 21 10 28 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" /><path d="M24 14C24 14 28 4 38 6C38 6 36 16 24 14Z" fill="currentColor" fill-opacity="0.8" />
+                    </svg>
+                    <a href="index-en.html" class="text-xl font-bold tracking-tight text-primary uppercase italic">Sainte Geneviève</a>
+                </div>
+                <nav class="hidden md:flex items-center gap-10">
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="la-maison-en.html">The House</a>
+                    <a class="text-sm font-medium text-primary border-b border-primary" href="index-en.html#chambres">Our Rooms</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="index-en.html#activites">Activities</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="tarifs-en.html">Rates</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="contact-en.html">Contact & Access</a>
+                </nav>
+                <a href="contact-en.html" class="bg-primary text-white px-6 py-2 text-sm font-bold rounded uppercase tracking-widest hover:bg-primary/90 transition-all">Book</a>
+                <div id="lang-toggle" class="ml-4 flex items-center gap-2">
+                    <a href="#" id="lang-link" class="text-sm font-medium hover:text-primary transition-colors">Français</a>
+                </div>
+                <button id="nav-toggle" aria-label="Open menu" class="md:hidden ml-3 p-2 rounded hover:bg-primary/5">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </header>
+        <div id="mobile-menu" class="md:hidden hidden bg-background-light dark:bg-background-dark border-b border-primary/10">
+          <nav class="flex flex-col items-center gap-4 py-4">
+            <a class="hover:text-primary" href="la-maison-en.html">The House</a>
+            <a class="hover:text-primary" href="index-en.html#chambres">Our Rooms</a>
+            <a class="hover:text-primary" href="index-en.html#activites">Activities</a>
+            <a class="hover:text-primary" href="tarifs-en.html">Rates</a>
+            <a class="hover:text-primary" href="contact-en.html">Contact & Access</a>
+          </nav>
+        </div>
+        <main class="flex-1 flex flex-col items-center">
+            <div class="w-full max-w-[1200px] px-6 md:px-20 py-8">
+                <nav class="flex items-center gap-2 mb-8 text-sm text-[#111318]/60 dark:text-gray-400">
+                    <a class="hover:text-primary transition-colors" href="index-en.html">Home</a>
+                    <span class="material-symbols-outlined text-xs">chevron_right</span>
+                    <a class="hover:text-primary transition-colors" href="index-en.html#chambres">Our Rooms</a>
+                    <span class="material-symbols-outlined text-xs">chevron_right</span>
+                    <span class="text-primary font-medium">Red Baroque</span>
+                </nav>
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+                    <div class="max-w-2xl">
+                        <span class="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Our Rooms</span>
+                        <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-4">Red Baroque Room</h2>
+                        <p class="text-xl text-[#111318]/70 dark:text-gray-300 font-light italic">Warmth and elegance for an unforgettable night.</p>
+                    </div>
+                    <div class="flex items-center gap-2 text-primary font-medium italic">
+                        <span class="material-symbols-outlined">landscape</span>
+                        <span>Pastoral views</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-3 h-[500px] md:h-[600px] mb-16">
+                    <div class="md:col-span-2 md:row-span-2 relative overflow-hidden rounded-lg group border border-primary/10">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url(&quot;images/b_baroque.jpg&quot;)"></div>
+                    </div>
+                    <div class="md:col-span-2 relative overflow-hidden rounded-lg group border border-primary/10">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url(&quot;images/b_baroque_lit.jpg&quot;)"></div>
+                    </div>
+                    <div class="relative overflow-hidden rounded-lg group border border-primary/10">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url(&quot;images/b_baroque_sdb.jpg&quot;)"></div>
+                    </div>
+                    <div class="relative overflow-hidden rounded-lg group border border-primary/10">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url(&quot;images/b_baroque_fenetre.jpg&quot;)"></div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+                    <div class="lg:col-span-2 flex flex-col gap-10">
+                        <section>
+                            <h3 class="text-3xl font-bold mb-6 border-l-4 border-primary pl-6">Baroque Charm & Warmth</h3>
+                            <p class="text-lg leading-relaxed text-[#111318]/80 dark:text-gray-300">
+                                The <span class="font-semibold text-primary italic">Red Baroque</span> room embraces rich, warm tones combined with classical elegance. With its spacious design and contemporary bathroom featuring a large shower, this room is perfect for guests seeking comfort with character. Panoramic views add to its appeal.
+                            </p>
+                        </section>
+                        <section class="bg-white dark:bg-gray-900 p-8 rounded-xl border border-primary/10 shadow-sm">
+                            <h4 class="text-xl font-bold mb-8 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">hotel_class</span>
+                                Amenities &amp; Services
+                            </h4>
+                            <ul class="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-12">
+                                <li class="flex gap-4"><span class="material-symbols-outlined text-primary/70">groups</span><span class="text-sm font-medium">Spacious room for 2 guests</span></li>
+                                <li class="flex gap-4"><span class="material-symbols-outlined text-primary/70">king_bed</span><span class="text-sm font-medium">One double bed (160 x 200cm)</span></li>
+                                <li class="flex gap-4"><span class="material-symbols-outlined text-primary/70">landscape</span><span class="text-sm font-medium">Views over the garden</span></li>
+                                <li class="flex gap-4"><span class="material-symbols-outlined text-primary/70">shower</span><span class="text-sm font-medium">Contemporary bathroom with large shower</span></li>
+                                <li class="flex gap-4"><span class="material-symbols-outlined text-primary/70">style</span><span class="text-sm font-medium">Baroque styling and classical elegance</span></li>
+                                <li class="flex gap-4"><span class="material-symbols-outlined text-primary/70">wifi</span><span class="text-sm font-medium">Free, high-speed WiFi access</span></li>
+                            </ul>
+                        </section>
+                        <blockquote class="italic text-lg text-primary border-l-2 border-primary pl-6 py-2">"Rich in charm and character, with all the modern comforts you need."</blockquote>
+                    </div>
+                    <aside class="flex flex-col gap-6">
+                        <div class="bg-primary/5 dark:bg-primary/10 border border-primary/20 p-8 rounded-xl sticky top-28">
+                            <div class="mb-6">
+                                <p class="text-xs uppercase tracking-widest text-primary font-bold mb-1">From</p>
+                                <div class="flex items-baseline gap-1"><span class="text-4xl font-black text-primary">90€</span><span class="text-[#111318]/60">/night</span></div>
+                            </div>
+                            <div class="space-y-4 mb-8">
+                                <div class="flex justify-between py-2 border-b border-primary/10 text-sm"><span>Capacity</span><span class="font-bold">2 Guests</span></div>
+                                <div class="flex justify-between py-2 border-b border-primary/10 text-sm"><span>Size</span><span class="font-bold">22 m²</span></div>
+                                <div class="flex justify-between py-2 border-b border-primary/10 text-sm"><span>Breakfast</span><span class="font-bold">Included</span></div>
+                                <div class="flex justify-between py-2 border-b border-primary/10 text-sm"><span>Check-in</span><span class="font-bold">From 5 PM</span></div>
+                            </div>
+                            <a href="contact-en.html" class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-lg transition-all flex items-center justify-center gap-2 uppercase tracking-widest text-sm">
+                                <span class="material-symbols-outlined text-lg">calendar_month</span>Book Now
+                            </a>
+                        </div>
+                        <a href="contact-en.html" class="p-6 border border-primary/10 rounded-xl flex items-center gap-4 bg-white dark:bg-gray-900 hover:border-primary/30 transition-all">
+                            <div class="bg-primary/10 p-3 rounded-full"><span class="material-symbols-outlined text-primary">support_agent</span></div>
+                            <div><p class="text-xs text-[#111318]/50">Have a question?</p><p class="text-sm font-bold">Contact us directly</p></div>
+                        </a>
+                    </aside>
+                </div>
+                <section class="mt-20 pt-16 border-t border-primary/10">
+                    <div class="flex justify-between items-end mb-10">
+                        <div><span class="text-primary font-bold tracking-[0.3em] uppercase text-xs">Also discover</span><h3 class="text-3xl font-bold mt-2">Our Other Rooms</h3></div>
+                        <a class="text-primary font-bold text-sm uppercase tracking-widest border-b border-primary pb-1 hover:opacity-80 transition-opacity" href="index-en.html#chambres">View all</a>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <a href="chambre-coucher-de-soleil-en.html" class="group bg-background-light dark:bg-background-dark border border-primary/10 overflow-hidden rounded-lg shadow-sm hover:shadow-xl transition-all block">
+                            <div class="aspect-video overflow-hidden relative">
+                                <div class="absolute top-4 left-4 z-10 bg-primary text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1">Popular</div>
+                                <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("images/b_coucher_lit.jpg");'></div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex justify-between items-start mb-4"><h3 class="text-xl font-bold">Sunset Room</h3><span class="text-primary font-bold italic">98€</span></div>
+                                <p class="text-sm leading-relaxed opacity-80 mb-6">A haven of softness with warm wooden tones and flowers, panoramic valley views.</p>
+                                <button class="w-full border border-primary text-primary py-2 font-bold text-xs tracking-widest uppercase hover:bg-primary hover:text-white transition-all">Discover</button>
+                            </div>
+                        </a>
+                        <a href="chambre-suite-familiale-en.html" class="group bg-background-light dark:bg-background-dark border border-primary/10 overflow-hidden rounded-lg shadow-sm hover:shadow-xl transition-all block">
+                            <div class="aspect-video overflow-hidden relative">
+                                <div class="absolute top-4 left-4 z-10 bg-primary text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1">Family</div>
+                                <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("images/b_suite_vue.jpg");'></div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex justify-between items-start mb-4"><h3 class="text-xl font-bold">Family Suite</h3><span class="text-primary font-bold italic">154€</span></div>
+                                <p class="text-sm leading-relaxed opacity-80 mb-6">A warm and spacious family suite with shower and bathtub, ideal for families.</p>
+                                <button class="w-full border border-primary text-primary py-2 font-bold text-xs tracking-widest uppercase hover:bg-primary hover:text-white transition-all">Discover</button>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </main>
+        <footer class="max-w-[1200px] mx-auto mt-20 pt-8 border-t border-primary/5 text-center">
+            <p class="text-[10px] uppercase tracking-[0.2em] opacity-40">© 2026 GUEST HOUSE SAINTE GENEVIEVE — <a href="mentions-legales-en.html">LEGAL NOTICES</a></p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const btn = document.getElementById('nav-toggle');
+            const menu = document.getElementById('mobile-menu');
+            if (btn && menu) {
+                btn.addEventListener('click', function () { menu.classList.toggle('hidden'); });
+                menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ menu.classList.add('hidden'); }); });
+            }
+            const langLink = document.getElementById('lang-link');
+            if (langLink) {
+                langLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const currentPath = window.location.pathname;
+                    if (currentPath.includes('-en')) {
+                        window.location.href = currentPath.replace('-en.html', '.html');
+                    } else {
+                        const newPath = currentPath.replace('.html', '-en.html');
+                        window.location.href = newPath;
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,15 +1,76 @@
 <!doctype html>
-<html lang="fr">
+<html class="light" lang="fr">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Mentions légales — Sainte Geneviève</title>
     <link rel="icon" href="images/Mirab.png" type="image/png">
-    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c2410c",
+                        "background-light": "#F9F7F2",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader", "serif"]
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Newsreader', serif; }
+        .logo-mirabelle { transition: transform 0.5s ease-in-out; }
+        .logo-mirabelle:hover { animation: wiggle 0.6s ease-in-out; }
+        @keyframes wiggle { 0% { transform: rotate(0deg); } 25% { transform: rotate(15deg); } 50% { transform: rotate(-10deg); } 75% { transform: rotate(5deg); } 100% { transform: rotate(0deg); } }
+    </style>
 </head>
-<body>
+<body class="bg-background-light dark:bg-background-dark text-[#111318] dark:text-gray-100">
+    <header class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-sm border-b border-primary/10 px-6 md:px-20 py-4">
+        <div class="max-w-[1200px] mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-primary logo-mirabelle cursor-pointer">
+                    <circle cx="20" cy="30" r="12" fill="currentColor" /><circle cx="32" cy="22" r="9" fill="currentColor" fill-opacity="0.6" /><path d="M20 18C20 18 21 10 28 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" /><path d="M24 14C24 14 28 4 38 6C38 6 36 16 24 14Z" fill="currentColor" fill-opacity="0.8" />
+                </svg>
+                <a href="index.html" class="text-xl font-bold tracking-tight text-primary uppercase italic">Sainte Geneviève</a>
+            </div>
+            <nav class="hidden md:flex items-center gap-10">
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="la-maison.html">La Maison</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html#chambres">Nos chambres</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html#activites">Activités</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="tarifs.html">Tarifs</a>
+                <a class="text-sm font-medium text-primary border-b border-primary" href="contact.html">Contact et Accès</a>
+            </nav>
+            <a href="contact.html" class="bg-primary text-white px-6 py-2 text-sm font-bold rounded uppercase tracking-widest hover:bg-primary/90 transition-all">Réserver</a>
+            <div id="lang-toggle" class="ml-4 flex items-center gap-2">
+                <a href="#" id="lang-link" class="text-sm font-medium hover:text-primary transition-colors">English</a>
+            </div>
+            <button id="nav-toggle" aria-label="Ouvrir le menu" class="md:hidden ml-3 p-2 rounded hover:bg-primary/5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </header>
+    <div id="mobile-menu" class="md:hidden hidden bg-background-light dark:bg-background-dark border-b border-primary/10">
+        <nav class="flex flex-col items-center gap-4 py-4">
+            <a class="hover:text-primary" href="la-maison.html">La Maison</a>
+            <a class="hover:text-primary" href="index.html#chambres">Nos chambres</a>
+            <a class="hover:text-primary" href="index.html#activites">Activités</a>
+            <a class="hover:text-primary" href="tarifs.html">Tarifs</a>
+            <a class="hover:text-primary" href="contact.html">Contact et Accès</a>
+        </nav>
+    </div>
+
     <main class="max-w-[900px] mx-auto py-20 px-6">
-        <h1 class="text-3xl font-bold mb-6">Mentions légales</h1>
+        <h1 class="text-4xl font-bold mb-10">Mentions légales</h1>
 
  <section class="mb-8">
             <h2 class="text-xl font-semibold mb-2"></h2>
@@ -57,12 +118,32 @@ Toute personne y procédant sans pouvoir justifier d'une autorisation préalable
 </p>
         </section>
 
-    </main>
-
-    <footer class="bg-background-light dark:bg-background-dark py-20 px-6 border-t border-primary/10">
-        <div class="max-w-[1200px] mx-auto mt-20 pt-8 border-t border-primary/5 text-center">
-            <p class="text-[10px] uppercase tracking-[0.2em] opacity-40">© 2026 MAISON D'HOTES SAINTE GENEVIEVE — <a href="mentions-legales.html">MENTIONS LÉGALES</a></p>
-        </div>
+    <footer class="max-w-[1200px] mx-auto mt-20 pt-8 border-t border-primary/5 text-center">
+        <p class="text-[10px] uppercase tracking-[0.2em] opacity-40">© 2026 MAISON D'HOTES SAINTE GENEVIEVE — <a href="mentions-legales.html">MENTIONS LÉGALES</a></p>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const btn = document.getElementById('nav-toggle');
+            const menu = document.getElementById('mobile-menu');
+            if (btn && menu) {
+                btn.addEventListener('click', function () { menu.classList.toggle('hidden'); });
+                menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ menu.classList.add('hidden'); }); });
+            }
+            const langLink = document.getElementById('lang-link');
+            if (langLink) {
+                langLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const currentPath = window.location.pathname;
+                    if (currentPath.includes('-en')) {
+                        window.location.href = currentPath.replace('-en.html', '.html');
+                    } else {
+                        const newPath = currentPath.replace('.html', '-en.html');
+                        window.location.href = newPath;
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>

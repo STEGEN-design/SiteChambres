@@ -1,0 +1,169 @@
+<!doctype html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Legal Notices — Sainte Geneviève</title>
+    <link rel="icon" href="images/Mirab.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#c2410c",
+                        "background-light": "#F9F7F2",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Newsreader", "serif"]
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Newsreader', serif; }
+        .logo-mirabelle { transition: transform 0.5s ease-in-out; }
+        .logo-mirabelle:hover { animation: wiggle 0.6s ease-in-out; }
+        @keyframes wiggle { 0% { transform: rotate(0deg); } 25% { transform: rotate(15deg); } 50% { transform: rotate(-10deg); } 75% { transform: rotate(5deg); } 100% { transform: rotate(0deg); } }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111318] dark:text-gray-100">
+    <header class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-sm border-b border-primary/10 px-6 md:px-20 py-4">
+        <div class="max-w-[1200px] mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-primary logo-mirabelle cursor-pointer">
+                    <circle cx="20" cy="30" r="12" fill="currentColor" /><circle cx="32" cy="22" r="9" fill="currentColor" fill-opacity="0.6" /><path d="M20 18C20 18 21 10 28 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" /><path d="M24 14C24 14 28 4 38 6C38 6 36 16 24 14Z" fill="currentColor" fill-opacity="0.8" />
+                </svg>
+                <a href="index-en.html" class="text-xl font-bold tracking-tight text-primary uppercase italic">Sainte Geneviève</a>
+            </div>
+            <nav class="hidden md:flex items-center gap-10">
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="la-maison-en.html">The House</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="index-en.html#chambres">Our Rooms</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="index-en.html#activites">Activities</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="tarifs-en.html">Rates</a>
+                <a class="text-sm font-medium text-primary border-b border-primary" href="contact-en.html">Contact & Access</a>
+            </nav>
+            <a href="contact-en.html" class="bg-primary text-white px-6 py-2 text-sm font-bold rounded uppercase tracking-widest hover:bg-primary/90 transition-all">Book</a>
+            <div id="lang-toggle" class="ml-4 flex items-center gap-2">
+                <a href="#" id="lang-link" class="text-sm font-medium hover:text-primary transition-colors">Français</a>
+            </div>
+            <button id="nav-toggle" aria-label="Open menu" class="md:hidden ml-3 p-2 rounded hover:bg-primary/5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </header>
+    <div id="mobile-menu" class="md:hidden hidden bg-background-light dark:bg-background-dark border-b border-primary/10">
+        <nav class="flex flex-col items-center gap-4 py-4">
+            <a class="hover:text-primary" href="la-maison-en.html">The House</a>
+            <a class="hover:text-primary" href="index-en.html#chambres">Our Rooms</a>
+            <a class="hover:text-primary" href="index-en.html#activites">Activities</a>
+            <a class="hover:text-primary" href="tarifs-en.html">Rates</a>
+            <a class="hover:text-primary" href="contact-en.html">Contact & Access</a>
+        </nav>
+    </div>
+
+    <main class="max-w-[900px] mx-auto py-20 px-6">
+        <h1 class="text-4xl font-bold mb-10">Legal Notices</h1>
+
+        <section class="mb-10">
+            <h2 class="text-2xl font-semibold mb-4">Legal Information</h2>
+            <p class="leading-relaxed mb-4">In accordance with the provisions of applicable data protection and online commerce legislation, this page provides the identity of the various parties involved in the operation of this website.</p>
+        </section>
+
+        <section class="mb-10">
+            <h2 class="text-2xl font-semibold mb-4">Website Publisher</h2>
+            <div class="bg-primary/5 border border-primary/20 p-6 rounded-lg">
+                <p><strong>Business Name:</strong> Guest House Sainte Geneviève</p>
+                <p><strong>Address:</strong> 4, route de Bezaumont – 54700 Sainte Geneviève, France</p>
+                <p><strong>Phone:</strong> +33 3 83 82 25 55</p>
+                <p><strong>Mobile:</strong> +33 6 30 85 50 28</p>
+                <p><strong>SIRET:</strong> 818 066 540 00019 - RCS Nancy</p>
+            </div>
+        </section>
+
+        <section class="mb-10">
+            <h2 class="text-2xl font-semibold mb-4">Contact</h2>
+            <p class="leading-relaxed">For any inquiries, please use the contact form available on this website.</p>
+        </section>
+
+        <section class="mb-10">
+            <h2 class="text-2xl font-semibold mb-4">Web Hosting</h2>
+            <p class="leading-relaxed"><strong>Hosting Provider:</strong> GitHub Pages</p>
+        </section>
+
+        <section class="mb-10">
+            <h2 class="text-2xl font-semibold mb-4">Personal Data Protection</h2>
+            <p class="leading-relaxed mb-4">
+                Personal information collected through this website (contact form, booking requests) is used solely for communication with the user and is never shared with third parties.
+            </p>
+            <p class="leading-relaxed mb-4">
+                In accordance with the General Data Protection Regulation (GDPR), users have the right to access, correct, and delete their personal data by submitting a request to:
+            </p>
+            <div class="bg-primary/5 border border-primary/20 p-6 rounded-lg">
+                <p>Guest House Sainte Geneviève<br/>
+                4, route de Bezaumont<br/>
+                54700 Sainte Geneviève, France</p>
+            </div>
+        </section>
+
+        <section class="mb-10">
+            <h2 class="text-2xl font-semibold mb-4">Intellectual Property Rights</h2>
+            <p class="leading-relaxed">
+                All content on this website, including texts, presentations, illustrations, photographs, and website structure, is the exclusive intellectual property of Guest House Sainte Geneviève or its partners, except for public documents and supplementary presentations.
+            </p>
+            <p class="leading-relaxed mt-4">
+                Any partial or complete reproduction, distribution, or rediffusion of these elements by any means, including automated or semi-automated data retrieval, is prohibited under French intellectual property law. Unauthorized reproduction constitutes counterfeiting and may result in legal penalties as provided by law.
+            </p>
+        </section>
+
+        <section class="mb-10">
+            <h2 class="text-2xl font-semibold mb-4">Limitation of Liability</h2>
+            <p class="leading-relaxed">
+                Despite careful review, Guest House Sainte Geneviève is not responsible for external links. This applies to websites we reference or hyperlinks pointing to our site. Guest House Sainte Geneviève assumes no responsibility for their content. If you discover illegal or illicit content, please report it using the contact form.
+            </p>
+        </section>
+
+        <section class="mb-10">
+            <h2 class="text-2xl font-semibold mb-4">Website Usage Terms</h2>
+            <p class="leading-relaxed">
+                This website is provided for informational purposes. The information contained herein is accurate to the best of our knowledge. We reserve the right to modify the content without prior notice. Users agree to use this site only for lawful purposes and in a way that does not infringe upon the rights of others or restrict their use and enjoyment of the website.
+            </p>
+        </section>
+    </main>
+
+    <footer class="max-w-[1200px] mx-auto mt-20 pt-8 border-t border-primary/5 text-center">
+        <p class="text-[10px] uppercase tracking-[0.2em] opacity-40">© 2026 GUEST HOUSE SAINTE GENEVIEVE — <a href="mentions-legales-en.html">LEGAL NOTICES</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const btn = document.getElementById('nav-toggle');
+            const menu = document.getElementById('mobile-menu');
+            if (btn && menu) {
+                btn.addEventListener('click', function () { menu.classList.toggle('hidden'); });
+                menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ menu.classList.add('hidden'); }); });
+            }
+            const langLink = document.getElementById('lang-link');
+            if (langLink) {
+                langLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const currentPath = window.location.pathname;
+                    if (currentPath.includes('-en')) {
+                        window.location.href = currentPath.replace('-en.html', '.html');
+                    } else {
+                        const newPath = currentPath.replace('.html', '-en.html');
+                        window.location.href = newPath;
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

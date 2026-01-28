@@ -161,10 +161,27 @@
 <div class="w-24 h-px bg-primary mx-auto"></div>
 </div>
 <div class="grid md:grid-cols-3 gap-8">
+
+<!-- CHAMBRE 1: COUCHER DE SOLEIL -->
 <a href="chambre-coucher-de-soleil.html" class="group bg-background-light dark:bg-background-dark border border-primary/10 overflow-hidden rounded-lg shadow-sm hover:shadow-xl transition-all block">
-<div class="aspect-square overflow-hidden relative">
+<div class="aspect-square overflow-hidden relative carousel-container" data-images='["images/b_coucher_lit.jpg", "images/b_coucher_lit2.jpg", "images/b_coucher_salon.jpg", "images/b_coucher_sdb2.jpg"]'>
     <div class="absolute top-4 left-4 z-10 bg-primary text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1">Populaire</div>
-<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url(&quot;images/b_coucher_lit.jpg&quot;);"></div>
+    <!-- Image actuelle -->
+    <div class="carousel-slide w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url(&quot;images/b_coucher_lit.jpg&quot;);"></div>
+    <!-- Navigation flèches -->
+    <button class="carousel-prev absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-primary p-2 rounded-full transition-all opacity-0 group-hover:opacity-100">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+    </button>
+    <button class="carousel-next absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-primary p-2 rounded-full transition-all opacity-0 group-hover:opacity-100">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+    </button>
+    <!-- Dots indicateurs -->
+    <div class="carousel-dots absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex gap-1.5">
+        <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all active" data-index="0"></button>
+        <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all" data-index="1"></button>
+        <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all" data-index="2"></button>
+        <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all" data-index="3"></button>
+    </div>
 </div>
 <div class="p-6">
 <div class="flex justify-between items-start mb-4">
@@ -172,8 +189,8 @@
 <span class="text-primary font-bold italic">98€</span>
 </div>
 <p class="text-sm leading-relaxed opacity-80 mb-6">
-                            Écrin de douceur aux tons bois et fleuris, avec vue panoramique sur la vallée et sur le jardin anglais.
-                        </p>
+Écrin de douceur aux tons bois et fleuris, avec vue panoramique sur la vallée et sur le jardin anglais.
+</p>
 <div class="flex gap-4 mb-8">
 <span class="material-symbols-outlined text-primary/60 text-lg" title="Grand Lit">bed</span>
 <span class="material-symbols-outlined text-primary/60 text-lg" title="Vue Vallée">landscape</span>
@@ -183,11 +200,23 @@
 <span class="w-full border border-primary text-primary py-2 font-bold text-xs tracking-widest uppercase hover:bg-primary hover:text-white transition-all block text-center">Découvrir</span>
 </div>
 </a>
-<div class="group bg-background-light dark:bg-background-dark border border-primary/10 overflow-hidden rounded-lg shadow-sm hover:shadow-xl transition-all">
+
+<!-- CHAMBRE 2: ROUGE BAROQUE -->
 <a href="chambre-rouge-baroque.html" class="group bg-background-light dark:bg-background-dark border border-primary/10 overflow-hidden rounded-lg shadow-sm hover:shadow-xl transition-all block">
-<div class="aspect-square overflow-hidden relative">
-<div class="absolute top-4 left-4 z-10 bg-primary text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1">Cosy</div>
-<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url(&quot;images/b_baroque.jpg&quot;);"></div>
+<div class="aspect-square overflow-hidden relative carousel-container" data-images='["images/b_baroque.jpg", "images/b_baroque_lit2.jpg", "images/b_baroque_sdb.jpg"]'>
+    <div class="absolute top-4 left-4 z-10 bg-primary text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1">Cosy</div>
+    <div class="carousel-slide w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url(&quot;images/b_baroque.jpg&quot;);"></div>
+    <button class="carousel-prev absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-primary p-2 rounded-full transition-all opacity-0 group-hover:opacity-100">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+    </button>
+    <button class="carousel-next absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-primary p-2 rounded-full transition-all opacity-0 group-hover:opacity-100">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+    </button>
+    <div class="carousel-dots absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex gap-1.5">
+        <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all active" data-index="0"></button>
+        <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all" data-index="1"></button>
+        <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all" data-index="2"></button>
+    </div>
 </div>
 <div class="p-6">
 <div class="flex justify-between items-start mb-4">
@@ -195,22 +224,35 @@
 <span class="text-primary font-bold italic">90€</span>
 </div>
 <p class="text-sm leading-relaxed opacity-80 mb-6">
-                            Charme baroque et vue panoramique pour cette chambre chaleureuse avec grande douche moderne.
-                        </p>
+Charme baroque et vue panoramique pour cette chambre chaleureuse avec grande douche moderne.
+</p>
 <div class="flex gap-4 mb-8">
 <span class="material-symbols-outlined text-primary/60 text-lg" title="Grand Lit">bed</span>
-<span class="material-symbols-outlined text-primary/60 text-lg" title="Vue Vallée">landscape</span><span class="material-symbols-outlined text-primary/60 text-lg" title="Douche Moderne">shower</span>
+<span class="material-symbols-outlined text-primary/60 text-lg" title="Vue Vallée">landscape</span>
+<span class="material-symbols-outlined text-primary/60 text-lg" title="Douche Moderne">shower</span>
 <span class="material-symbols-outlined text-primary/60 text-lg" title="Petit Déjeuner">coffee</span>
-
 </div>
-<button class="w-full border border-primary text-primary py-2 font-bold text-xs tracking-widest uppercase hover:bg-primary hover:text-white transition-all">Découvrir
+<span class="w-full border border-primary text-primary py-2 font-bold text-xs tracking-widest uppercase hover:bg-primary hover:text-white transition-all block text-center">Découvrir</span>
 </div>
 </a>
-</div>
+
+<!-- CHAMBRE 3: SUITE FAMILIALE -->
 <a href="chambre-suite-familiale.html" class="group bg-background-light dark:bg-background-dark border border-primary/10 overflow-hidden rounded-lg shadow-sm hover:shadow-xl transition-all block">
-<div class="aspect-square overflow-hidden relative">
-<div class="absolute top-4 left-4 z-10 bg-primary text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1">Famille</div>
-<div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url(&quot;images/b_suite_lit.jpg&quot;);"></div>
+<div class="aspect-square overflow-hidden relative carousel-container" data-images='["images/b_suite_lit.jpg", "images/b_suite_vue.jpg", "images/b_suite_Sdb.jpg", "images/b_suite_enfat.jpg"]'>
+    <div class="absolute top-4 left-4 z-10 bg-primary text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1">Famille</div>
+    <div class="carousel-slide w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url(&quot;images/b_suite_lit.jpg&quot;);"></div>
+    <button class="carousel-prev absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-primary p-2 rounded-full transition-all opacity-0 group-hover:opacity-100">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+    </button>
+    <button class="carousel-next absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-primary p-2 rounded-full transition-all opacity-0 group-hover:opacity-100">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+    </button>
+    <div class="carousel-dots absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex gap-1.5">
+        <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all active" data-index="0"></button>
+        <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all" data-index="1"></button>
+        <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all" data-index="2"></button>
+        <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all" data-index="3"></button>
+    </div>
 </div>
 <div class="p-6">
 <div class="flex justify-between items-start mb-4">
@@ -304,6 +346,63 @@ document.addEventListener('DOMContentLoaded', function () {
                 const newPath = currentPath.replace('.html', '-en.html');
                 window.location.href = newPath;
             }
+        });
+    });
+
+    // Carousel functionality
+    document.querySelectorAll('.carousel-container').forEach(function(carousel) {
+        let currentIndex = 0;
+        const images = JSON.parse(carousel.getAttribute('data-images'));
+        const slide = carousel.querySelector('.carousel-slide');
+        const dots = carousel.querySelectorAll('.carousel-dot');
+        const prevBtn = carousel.querySelector('.carousel-prev');
+        const nextBtn = carousel.querySelector('.carousel-next');
+
+        function updateSlide(index) {
+            slide.style.backgroundImage = `url("${images[index]}")`;
+            dots.forEach(d => d.classList.remove('active', 'bg-white'));
+            dots.forEach(d => d.classList.add('bg-white/60'));
+            if (dots[index]) {
+                dots[index].classList.add('active', 'bg-white');
+                dots[index].classList.remove('bg-white/60');
+            }
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateSlide(currentIndex);
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateSlide(currentIndex);
+        }
+
+        prevBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            prevSlide();
+        });
+
+        nextBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            nextSlide();
+        });
+
+        dots.forEach(function(dot) {
+            dot.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                currentIndex = parseInt(dot.getAttribute('data-index'));
+                updateSlide(currentIndex);
+            });
+        });
+
+        // Keyboard navigation
+        carousel.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') prevSlide();
+            if (e.key === 'ArrowRight') nextSlide();
         });
     });
 });

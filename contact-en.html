@@ -90,18 +90,19 @@
             </div>
             <nav class="hidden md:flex items-center gap-10">
                 <a class="text-sm font-medium hover:text-primary transition-colors" href="la-maison-en.html">The House</a>
-                    <a class="text-sm font-medium hover:text-primary transition-colors" href="index-en.html#chambres">Our Rooms</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="index-en.html#chambres">Our Rooms</a>
                 <a class="text-sm font-medium hover:text-primary transition-colors" href="index-en.html#activites">Activities</a>
                 <a class="text-sm font-medium hover:text-primary transition-colors" href="tarifs-en.html">Rates</a>
                 <a class="text-sm font-medium text-primary border-b border-primary" href="contact-en.html">Contact & Access</a>
             </nav>
-            <a href="contact-en.html" class="bg-primary text-white px-6 py-2 text-sm font-bold rounded uppercase tracking-widest hover:bg-primary/90 transition-all">
-                Book
-            </a>
-            <div id="lang-toggle" class="ml-4 flex items-center gap-2">
-                <a href="#" id="lang-link" class="text-sm font-medium hover:text-primary transition-colors">Français</a>
+            <div id="lang-toggle" class="ml-4 hidden md:flex items-center gap-2">
+                <a href="#" id="lang-link" class="text-sm font-medium hover:text-primary transition-colors">FR</a>
             </div>
-            <button id="nav-toggle" aria-label="Open menu" class="md:hidden ml-3 p-2 rounded hover:bg-primary/5">
+            <div class="md:hidden flex items-center gap-3">
+                <div class="flex items-center gap-2 pl-3 border-l border-primary/20">
+                    <a href="#" id="lang-link" class="text-sm font-medium hover:text-primary transition-colors">FR</a>
+                </div>
+                <button id="nav-toggle" aria-label="Open menu" class="p-2 rounded hover:bg-primary/5">
                 <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
@@ -109,20 +110,19 @@
         </div>
     </header>
     <div id="mobile-menu" class="md:hidden hidden bg-background-light dark:bg-background-dark border-b border-primary/10">
-      <nav class="flex flex-col items-center gap-4 py-4">
-        <a class="hover:text-primary" href="la-maison-en.html">The House</a>
-        <a class="hover:text-primary" href="index-en.html#chambres">Our Rooms</a>
-        <a class="hover:text-primary" href="index-en.html#activites">Activities</a>
-        <a class="hover:text-primary" href="tarifs-en.html">Rates</a>
-        <a class="hover:text-primary" href="contact-en.html">Contact & Access</a>
-      </nav>
+        <nav class="flex flex-col items-center gap-4 py-4">
+            <a class="hover:text-primary" href="la-maison-en.html">The House</a>
+            <a class="hover:text-primary" href="index-en.html#chambres">Our Rooms</a>
+            <a class="hover:text-primary" href="index-en.html#activites">Activities</a>
+            <a class="hover:text-primary" href="tarifs-en.html">Rates</a>
+            <a class="hover:text-primary" href="contact-en.html">Contact & Access</a>
+        </nav>
     </div>
 
     <main>
         <!-- Hero Section -->
         <section class="relative h-[50vh] w-full flex items-center justify-center overflow-hidden">
-            <div class="absolute inset-0 bg-cover bg-center" style='background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url("images/chazal-diaporama.jpg">
-            </div>
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), url('images/chazal-diaporama.jpg')"></div>
             <div class="relative z-10 text-center text-white px-4 max-w-4xl">
                 <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-4">Contact Us</h1>
                 <div class="w-24 h-px bg-white mx-auto mt-6"></div>
@@ -157,14 +157,13 @@
                             <div>
                                 <h4 class="font-bold text-sm uppercase tracking-widest mb-2">Phone</h4>
                                 <p class="text-lg opacity-80">+33 3 83 82 25 55</p>
-                                
-                                
                             </div>
+                        </div>
+                        <div class="flex items-start gap-6">
+                            <span class="material-symbols-outlined text-primary text-2xl mt-1">call</span>
                             <div>
                                 <h4 class="font-bold text-sm uppercase tracking-widest mb-2">Mobile</h4>
                                 <p class="text-lg opacity-80">+33 6 30 85 50 28</p>
-                                
-                                
                             </div>
                         </div>
                         <div class="flex items-start gap-6">
@@ -267,8 +266,8 @@
             menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ menu.classList.add('hidden'); }); });
             
             // Language toggle
-            const langLink = document.getElementById('lang-link');
-            if (langLink) {
+            const langLinks = document.querySelectorAll('[id="lang-link"]');
+            langLinks.forEach(function(langLink) {
                 langLink.addEventListener('click', function(e) {
                     e.preventDefault();
                     const currentPath = window.location.pathname;
@@ -279,7 +278,7 @@
                         window.location.href = newPath;
                     }
                 });
-            }
+            });
         });
         </script>
 </body>

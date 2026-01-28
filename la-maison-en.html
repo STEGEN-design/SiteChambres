@@ -74,13 +74,14 @@
                     <a class="text-sm font-medium hover:text-primary transition-colors" href="tarifs-en.html">Rates</a>
                     <a class="text-sm font-medium hover:text-primary transition-colors" href="contact-en.html">Contact & Access</a>
                 </nav>
-                <a href="contact-en.html" class="bg-primary text-white px-6 py-2 text-sm font-bold rounded uppercase tracking-widest hover:bg-primary/90 transition-all">
-                    Book
-                </a>
-                <div id="lang-toggle" class="ml-4 flex items-center gap-2">
-                    <a href="#" id="lang-link" class="text-sm font-medium hover:text-primary transition-colors">Français</a>
+                <div id="lang-toggle" class="ml-4 hidden md:flex items-center gap-2">
+                    <a href="#" id="lang-link" class="text-sm font-medium hover:text-primary transition-colors">FR</a>
                 </div>
-                <button id="nav-toggle" aria-label="Open menu" class="md:hidden ml-3 p-2 rounded hover:bg-primary/5">
+                <div class="md:hidden flex items-center gap-3">
+                    <div class="flex items-center gap-2 pl-3 border-l border-primary/20">
+                        <a href="#" id="lang-link" class="text-sm font-medium hover:text-primary transition-colors">FR</a>
+                    </div>
+                    <button id="nav-toggle" aria-label="Open menu" class="p-2 rounded hover:bg-primary/5">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
@@ -223,8 +224,8 @@
             menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ menu.classList.add('hidden'); }); });
             
             // Language toggle
-            const langLink = document.getElementById('lang-link');
-            if (langLink) {
+            const langLinks = document.querySelectorAll('[id="lang-link"]');
+            langLinks.forEach(function(langLink) {
                 langLink.addEventListener('click', function(e) {
                     e.preventDefault();
                     const currentPath = window.location.pathname;
@@ -235,7 +236,7 @@
                         window.location.href = newPath;
                     }
                 });
-            }
+            });
         });
     </script>
 </body>

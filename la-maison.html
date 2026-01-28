@@ -115,7 +115,23 @@
                     <h2 class="text-4xl md:text-5xl font-bold mt-4 mb-6">L'Âme de la Demeure</h2>
                     <div class="w-24 h-px bg-primary mx-auto"></div>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <!-- Carousel Mobile Only -->
+                <div class="md:hidden mb-12 aspect-[4/5] overflow-hidden rounded-lg border border-primary/10 relative carousel-container" data-images='["images/b_devant2.jpg", "images/b_entree.jpg", "images/b_couloir.jpg"]'>
+                    <div class="carousel-slide w-full h-full bg-cover bg-center transition-transform duration-500" style="background-image: url('images/b_devant2.jpg');"></div>
+                    <button class="carousel-prev absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-primary p-2 rounded-full transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                    </button>
+                    <button class="carousel-next absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-primary p-2 rounded-full transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                    </button>
+                    <div class="carousel-dots absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex gap-1.5">
+                        <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all active" data-index="0"></button>
+                        <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all" data-index="1"></button>
+                        <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all" data-index="2"></button>
+                    </div>
+                </div>
+                <!-- Grid Desktop Only -->
+                <div class="hidden md:grid grid-cols-3 gap-6 mb-12">
                     <div class="aspect-[4/5] overflow-hidden rounded-lg border border-primary/10 group">
                         <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('images/b_devant2.jpg');"></div>
                     </div>
@@ -145,7 +161,23 @@
                         <h2 class="text-4xl md:text-5xl font-bold mt-4 mb-6">Le Jardin à l'Anglaise</h2>
                         <div class="w-24 h-px bg-primary mx-auto"></div>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                    <!-- Carousel Mobile Only -->
+                    <div class="md:hidden mb-12 aspect-[4/5] overflow-hidden rounded-lg border border-primary/10 relative carousel-container" data-images='["images/b_jardin.jpg", "images/b_jardin2.jpg", "images/b_jardin3.jpg"]'>
+                        <div class="carousel-slide w-full h-full bg-cover bg-center transition-transform duration-500" style="background-image: url('images/b_jardin.jpg');"></div>
+                        <button class="carousel-prev absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-primary p-2 rounded-full transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                        </button>
+                        <button class="carousel-next absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-primary p-2 rounded-full transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                        </button>
+                        <div class="carousel-dots absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex gap-1.5">
+                            <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all active" data-index="0"></button>
+                            <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all" data-index="1"></button>
+                            <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all" data-index="2"></button>
+                        </div>
+                    </div>
+                    <!-- Grid Desktop Only -->
+                    <div class="hidden md:grid grid-cols-3 gap-6 mb-12">
                         <div class="aspect-[4/5] overflow-hidden rounded-lg border border-primary/10 group">
                             <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('images/b_jardin.jpg');"></div>
                         </div>
@@ -174,7 +206,23 @@
                     <h2 class="text-4xl md:text-5xl font-bold mt-4 mb-6">Convivialité & Partage</h2>
                     <div class="w-24 h-px bg-primary mx-auto"></div>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <!-- Carousel Mobile Only -->
+                <div class="md:hidden mb-12 aspect-[4/5] overflow-hidden rounded-lg border border-primary/10 relative carousel-container" data-images='["images/b_salleamanger.jpg", "images/b_salleamanger2.jpg", "images/b_biblio.jpg"]'>
+                    <div class="carousel-slide w-full h-full bg-cover bg-center transition-transform duration-500" style="background-image: url('images/b_salleamanger.jpg');"></div>
+                    <button class="carousel-prev absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-primary p-2 rounded-full transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                    </button>
+                    <button class="carousel-next absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-primary p-2 rounded-full transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                    </button>
+                    <div class="carousel-dots absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex gap-1.5">
+                        <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all active" data-index="0"></button>
+                        <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all" data-index="1"></button>
+                        <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all" data-index="2"></button>
+                    </div>
+                </div>
+                <!-- Grid Desktop Only -->
+                <div class="hidden md:grid grid-cols-3 gap-6 mb-12">
                     <div class="aspect-[4/5] overflow-hidden rounded-lg border border-primary/10 group">
                         <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('images/b_salleamanger.jpg');"></div>
                     </div>
@@ -233,6 +281,69 @@
                     } else {
                         const newPath = currentPath.replace('.html', '-en.html');
                         window.location.href = newPath;
+                    }
+                });
+            });
+
+            // Image Carousel
+            document.querySelectorAll('.carousel-container').forEach(function(carousel) {
+                let currentIndex = 0;
+                const images = JSON.parse(carousel.getAttribute('data-images'));
+                const slide = carousel.querySelector('.carousel-slide');
+                const dots = carousel.querySelectorAll('.carousel-dot');
+                const prevBtn = carousel.querySelector('.carousel-prev');
+                const nextBtn = carousel.querySelector('.carousel-next');
+
+                function updateSlide(index) {
+                    slide.style.backgroundImage = `url("${images[index]}")`;
+                    dots.forEach(d => d.classList.remove('active', 'bg-white'));
+                    dots.forEach(d => d.classList.add('bg-white/60'));
+                    if (dots[index]) {
+                        dots[index].classList.add('active', 'bg-white');
+                        dots[index].classList.remove('bg-white/60');
+                    }
+                }
+
+                function nextSlide() {
+                    currentIndex = (currentIndex + 1) % images.length;
+                    updateSlide(currentIndex);
+                }
+
+                function prevSlide() {
+                    currentIndex = (currentIndex - 1 + images.length) % images.length;
+                    updateSlide(currentIndex);
+                }
+
+                prevBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    prevSlide();
+                });
+
+                nextBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    nextSlide();
+                });
+
+                dots.forEach(function(dot) {
+                    dot.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        currentIndex = parseInt(dot.getAttribute('data-index'));
+                        updateSlide(currentIndex);
+                    });
+                });
+
+                document.addEventListener('keydown', function(e) {
+                    const isFocused = carousel.querySelector(':focus');
+                    if (!carousel.contains(document.activeElement)) return;
+                    if (e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        prevSlide();
+                    } else if (e.key === 'ArrowRight') {
+                        e.preventDefault();
+                        nextSlide();
                     }
                 });
             });

@@ -99,7 +99,7 @@
                         <span>Ideal for families</span>
                     </div>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-3 h-[500px] md:h-[600px] mb-16">
+                <div class="md:grid hidden grid-cols-1 md:grid-cols-4 grid-rows-2 gap-3 h-[500px] md:h-[600px] mb-16">
                     <div class="md:col-span-2 md:row-span-2 relative overflow-hidden rounded-lg group border border-primary/10">
                         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url(&quot;images/b_suite_vue.jpg&quot;)"></div>
                     </div>
@@ -111,6 +111,25 @@
                     </div>
                     <div class="relative overflow-hidden rounded-lg group border border-primary/10">
                         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url(&quot;images/b_suite_salon.jpg&quot;)"></div>
+                    </div>
+                </div>
+
+                <!-- Mobile Carousel -->
+                <div class="md:hidden mb-16">
+                    <div class="aspect-square overflow-hidden relative carousel-container rounded-lg border border-primary/10" data-images='["images/b_suite_vue.jpg", "images/b_suite_lit.jpg", "images/b_suite_sdb.jpg", "images/b_suite_salon.jpg"]'>
+                        <div class="carousel-slide w-full h-full bg-cover bg-center transition-transform duration-500" style="background-image: url(&quot;images/b_suite_vue.jpg&quot;);"></div>
+                        <button class="carousel-prev absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-primary p-2 rounded-full transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                        </button>
+                        <button class="carousel-next absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-primary p-2 rounded-full transition-all">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                        </button>
+                        <div class="carousel-dots absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex gap-1.5">
+                            <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all active" data-index="0"></button>
+                            <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all" data-index="1"></button>
+                            <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all" data-index="2"></button>
+                            <button class="carousel-dot w-2 h-2 rounded-full bg-white/60 hover:bg-white transition-all" data-index="3"></button>
+                        </div>
                     </div>
                 </div>
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
@@ -215,6 +234,63 @@
                         const newPath = currentPath.replace('.html', '-en.html');
                         window.location.href = newPath;
                     }
+                });
+            });
+
+            // Carousel functionality
+            document.querySelectorAll('.carousel-container').forEach(function(carousel) {
+                let currentIndex = 0;
+                const images = JSON.parse(carousel.getAttribute('data-images'));
+                const slide = carousel.querySelector('.carousel-slide');
+                const dots = carousel.querySelectorAll('.carousel-dot');
+                const prevBtn = carousel.querySelector('.carousel-prev');
+                const nextBtn = carousel.querySelector('.carousel-next');
+
+                function updateSlide(index) {
+                    slide.style.backgroundImage = `url("${images[index]}")`;
+                    dots.forEach(d => d.classList.remove('active', 'bg-white'));
+                    dots.forEach(d => d.classList.add('bg-white/60'));
+                    if (dots[index]) {
+                        dots[index].classList.add('active', 'bg-white');
+                        dots[index].classList.remove('bg-white/60');
+                    }
+                }
+
+                function nextSlide() {
+                    currentIndex = (currentIndex + 1) % images.length;
+                    updateSlide(currentIndex);
+                }
+
+                function prevSlide() {
+                    currentIndex = (currentIndex - 1 + images.length) % images.length;
+                    updateSlide(currentIndex);
+                }
+
+                prevBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    prevSlide();
+                });
+
+                nextBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    nextSlide();
+                });
+
+                dots.forEach(function(dot) {
+                    dot.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        currentIndex = parseInt(dot.getAttribute('data-index'));
+                        updateSlide(currentIndex);
+                    });
+                });
+
+                // Keyboard navigation
+                carousel.addEventListener('keydown', function(e) {
+                    if (e.key === 'ArrowLeft') prevSlide();
+                    if (e.key === 'ArrowRight') nextSlide();
                 });
             });
         });
